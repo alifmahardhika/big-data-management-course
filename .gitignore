@@ -1,3 +1,4 @@
 .gitconfig
 *.jar
 *.class
+.bash_history
