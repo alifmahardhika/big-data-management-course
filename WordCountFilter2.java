@@ -15,10 +15,12 @@ public class WordCountFilter2 {
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
             StringTokenizer itr = new StringTokenizer(value.toString());
             IntWritable one = new IntWritable(1);
-            Text word = new Text();
+            org.w3c.dom.Text word = new Text();
             while (itr.hasMoreTokens()) {
                 word.set(itr.nextToken());
-                context.write(word, one);
+                if (word.toString().length() > 3) {
+                    context.write(word, one);
+                }
             }
         }
     }
