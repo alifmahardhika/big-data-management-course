@@ -32,7 +32,9 @@ public class WordCountFilter1 {
                 sum += val.get();
             }
             result.set(sum);
-            context.write(key, result);
+            if (result >1 {
+                context.write(key, result);                
+            }
         }
     }
 
