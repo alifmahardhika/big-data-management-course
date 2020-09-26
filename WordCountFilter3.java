@@ -13,7 +13,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class WordCountFilter3 {
     public static class MyMapper extends Mapper<Object, Text, Text, IntWritable> {
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
-            StringTokenizer itr = new StringTokenizer(value.toString().toLowerCase());
+            StringTokenizer itr = new StringTokenizer(value.toString().toLowerCase().replace("\"", ""));
             IntWritable one = new IntWritable(1);
             Text word = new Text();
             while (itr.hasMoreTokens()) {
