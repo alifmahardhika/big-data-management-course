@@ -3,3 +3,6 @@
 *.class
 .bash_history
 compilecommands.txt
+*.csv
+*.zip
+*.ipynb
