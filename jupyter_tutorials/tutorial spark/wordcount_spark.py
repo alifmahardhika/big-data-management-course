@@ -1,4 +1,5 @@
 # NOTE gabuat dijalanin dilocal
+# error gangerti bye
 from operator import add
 from pyspark import SparkContext
 sc = SparkContext("local[*]", "example")
