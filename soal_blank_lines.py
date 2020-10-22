@@ -7,14 +7,14 @@ spark = SparkSession.builder.getOrCreate()
 
 blk_cnt = spark.sparkContext.accumulator(0)
 
-print("Initial Value of Accumulator:" , blk_cnt.value)
+print("blank line starting count:" , blk_cnt.value)
 
 def Blank_lines(line):
     if(len(line) == 0):
         blk_cnt.add(1)
 
-file = spark.sparkContext.textFile("data/README.md")
+file = spark.sparkContext.textFile("README.md")
 
 r1 = file.foreach(lambda x: Blank_lines(x))
 
-print("Updated Value of Accumulator: " ,blk_cnt.value)
+print("blank line final count: " ,blk_cnt.value)
