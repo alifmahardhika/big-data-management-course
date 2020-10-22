@@ -5,4 +5,5 @@
 compilecommands.txt
 *.csv
 *.zip
-*.ipynb
+# *.ipynb
+/jupyter_tutorials/tutorial1and2
