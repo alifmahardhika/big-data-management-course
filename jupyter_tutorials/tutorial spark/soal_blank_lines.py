@@ -7,7 +7,7 @@ spark = SparkSession.builder.getOrCreate()
 
 blk_cnt = spark.sparkContext.accumulator(0)
 
-print("Initial Value of Accumulaor:" , blk_cnt.value)
+print("Initial Value of Accumulator:" , blk_cnt.value)
 
 def Blank_lines(line):
     if(len(line) == 0):
@@ -17,4 +17,4 @@ file = spark.sparkContext.textFile("data/README.md")
 
 r1 = file.foreach(lambda x: Blank_lines(x))
 
-print(“Updated Value of Accumulaor: ” ,blk_cnt.value)
+print("Updated Value of Accumulator: " ,blk_cnt.value)
